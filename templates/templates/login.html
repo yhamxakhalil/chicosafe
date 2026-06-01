@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block title %}Login — Chico Safe{% endblock %} {% block auth_content %}
+🔐
+Chico Safe
+Sign in to access your secure vault
+
+{% with msgs = get_flashed_messages(with_categories=true) %} {% for cat, msg in msgs %}
+{{ msg }}
+{% endfor %} {% endwith %}
+Username 
+Enter your username
+Password 
+Enter your password
+🔓 Unlock Vault
+Don't have an account? Create one
+
+{% endblock %}
