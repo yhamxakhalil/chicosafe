@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block title %}My Vault — Chico Safe{% endblock %} {% block extra_head %} {% endblock %} {% block content %}
+🔒 My Vault
+Manage your encrypted credentials. Only you can see these.
+
+Add New Password
+Passwords are encrypted before saving.
+Site / App Name 
+e.g. Gmail, Netflix, Jumia
+Password 
+Enter or paste password
+💾 Save
+Saved Credentials
+{{ items|length }} password{% if items|length != 1 %}s{% endif %} stored
+🔍 Search vault…
+{% if items %} {% for item in items %} {% endfor %}
+#	Site / App	Password	Actions
+{{ loop.index }}	{{ item.site }}	•••••••••••• 👁️ Copy	
+🗑️ Delete
+{% else %}
+🔒
+No credentials yet
+
+Add your first password using the form above.
+
+{% endif %}
+{% endblock %}
