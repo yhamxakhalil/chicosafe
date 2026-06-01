@@ -1,0 +1,21 @@
+{% block extra_head %}{% endblock %} {% if current_user.is_authenticated %}
+🔐
+Chico Safe
+{{ current_user.username }}
+Logged in
+Menu
+🏠
+Dashboard
+🔒
+My Vault
+📊
+Analyzer
+⚙️
+Generator
+
+🚪
+Logout
+{% with msgs = get_flashed_messages(with_categories=true) %} {% for cat, msg in msgs %}
+{% if cat=='error' %}⚠️{% elif cat=='success' %}✅{% else %}ℹ️{% endif %} {{ msg }}
+{% endfor %} {% endwith %} {% block content %}{% endblock %}
+{% else %} {% block auth_content %}{% endblock %} {% endif %}
